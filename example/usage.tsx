@@ -5,7 +5,7 @@ import { Leaf } from './leaf.ts'
 const leaf = new Leaf()
   .request(new Request('https://example.com'))  
   .pathname('/hello-world')
-  .match(async (req: Request, ctx: { pathname: string, url: URL }) => {
+  .match(async (_req, ctx) => {
     const match = new URLPattern({ pathname: ctx.pathname }).exec(ctx.url.pathname)
     const age = ctx.url.searchParams.get('age')
     if (!match) return null
