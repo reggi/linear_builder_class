@@ -18,7 +18,7 @@ Builds a class with these methods:
 
 ```ts
 new Leaf()
-  .request(new Request('hi'))  
+  .request(new Request('https://example.com'))  
   .pathname('/hello-world')
   .match(async (_req, ctx) => {
     const match = new URLPattern({ pathname: ctx.pathname }).exec(ctx.url.pathname)
