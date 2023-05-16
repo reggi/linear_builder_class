@@ -1,4 +1,4 @@
-import { build } from '../main.ts'
+import { build } from '../mod.ts'
 
 const contents = `
 request*: Request
