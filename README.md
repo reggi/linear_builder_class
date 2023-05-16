@@ -69,12 +69,18 @@ Where the return value is a class with these properties.
 
 This example was created using Deno, you can build the code using:
 
-```
+```bash
 deno run -A ./example/build.ts > example/leaf.ts
 ```
 
 and run the usage using:
 
-```
+```bash
 deno run example/usage.tsx
+```
+
+CLI Usage example:
+
+```bash
+deno run --allow-read ./bin.ts ./example/Leaf.lbc
 ```

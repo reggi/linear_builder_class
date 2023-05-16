@@ -1,3 +1,5 @@
+import * as frontMatter from "https://deno.land/std@0.187.0/front_matter/any.ts";
+
 const pattern = /^((\s)+)?(\w+)(.)?:\s(\w+)(\<(.+)\>)?/
 
 function onlyUnique(value: string, index: number, array: string[]) {
@@ -47,7 +49,14 @@ ${p.priors.map((v) =>{
 }
 `.trim()
 
-export function build (contents: string, g: { className: string, importsFrom?: string }) {
+export function build (rawContents: string, g: { className: string, importsFrom?: string }) {
+
+  const {body: contents, attrs} = frontMatter.extract(rawContents)
+
+  g = {...attrs, ...g}
+
+  console.log(g)
+
   const syntax = contents.split('\n').map(v => {
     const x = v.match(pattern)
     if (!x) return null

@@ -1,0 +1,8 @@
+---
+importsFrom: ./types.ts
+---
+request*: Request
+pathname*: string
+match: MatchHandler<M>
+data: DataHandler<M, D>
+component: ComponentHandler<M>
